@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="http://sushain.com/blog/wp-content/uploads/2017/08/sp_logo_final-e1503864748285.jpg">
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <meta name="description" content="Sushain Pandit is a technologist, inventor and author with contributions in data, analytics, artificial intelligence, counter fraud and related areas.">
+    <meta name="keywords" content="sushain,pandit,engineer,inventor,artificial,intelligence,data,datascience">
+    <meta name="author" content="Sushain Pandit">
+    <title>Sushain Pandit - AI Signals</title>
+
+    <style type="text/css">
+      body, html, select {
+        font: 10pt sans-serif;
+      }
+    </style>
+
+    <script src="signaldata_files/vis.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+      /*var bustcachevar=1 //bust potential caching of external pages after initial request? (1=yes, 0=no)
+      var bustcacheparameter=""
+
+      function ajaxpage(url, containerid){
+        var page_request = false
+        if (window.XMLHttpRequest) // if Mozilla, Safari etc
+          page_request = new XMLHttpRequest()
+        else if (window.ActiveXObject){ // if IE
+          try {
+            page_request = new ActiveXObject("Msxml2.XMLHTTP")
+          }
+          catch (e){
+            try{
+              page_request = new ActiveXObject("Microsoft.XMLHTTP")
+            }
+            catch (e){}
+          }
+        }
+        else
+          return false
+
+        page_request.onreadystatechange=function(){
+          if (page_request.readyState == 1 ) {
+              // LOADING
+              //fireMyPopup();
+          }
+
+          if (page_request.readyState == 2 ) {
+              // LOADED
+              //closeMyPopup();
+          }
+          loadpage(page_request, containerid)
+        }
+        if (bustcachevar) //if bust caching of external page
+          bustcacheparameter=(url.indexOf("?")!=-1)? "&"+new Date().getTime() : "?"+new Date().getTime()
+        page_request.open('GET', url+bustcacheparameter, true)
+        page_request.send(null)
+      }
+
+      function loadpage(page_request, containerid){
+        if (page_request.readyState == 4 && (page_request.status==200 || window.location.href.indexOf("http")==-1))
+          document.getElementById(containerid).innerHTML=page_request.responseText
+      }*/
+
+      function load_page(page_request, containerid) {
+           document.getElementById(containerid).innerHTML='<object style="width:780px;height:450px;" type="text/html" data='+page_request+'></object>';
+      }
+
+    </script>
+
+    <link href="signaldata_files/vis-timeline-graph2d.css" rel="stylesheet" type="text/css">
+    <link href="signaldata_files/bootstrap.css" rel="stylesheet">
+    <link href="signaldata_files/dashboard.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="http://aisignals.from.sushain.com" target="_blank">AI Signals</a>
+      <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <!--li class="nav-item active">
+            <a class="nav-link" href="">Home <span class="sr-only">(current)</span></a>
+          </li-->
+          <li class="nav-item">
+            <a class="nav-link" href="http://semantixs.sushain.com" target="_blank">Technology</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://sushain.com" target="_blank">About</a>
+          </li>
+          <!--li class="nav-item">
+            <a class="nav-link" href="#">Help</a>
+          </li-->
+        </ul>
+        <form class="form-inline mt-2 mt-md-0">
+          <input class="form-control mr-sm-2" placeholder="Search" aria-label="Search" type="text">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="col-sm-3 col-md-2 d-none d-sm-block bg-light sidebar">
+          <ul class="nav nav-pills flex-column">
+            <li class="nav-item">
+              <a class="nav-link active" href="javascript:init();">Dashboard <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Analytics</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="javascript:load_page('./semantixs.html','visualization');">How We Crunch Text</a>
+            </li>
+          </ul>
+          <!--ul class="nav nav-pills flex-column">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Nav item</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Nav item again</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">One more nav</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Another nav item</a>
+            </li>
+          </ul>
+
+          <ul class="nav nav-pills flex-column">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Nav item again</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">One more nav</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Another nav item</a>
+            </li>
+          </ul-->
+        </nav>
+
+        <script>
+        // Add your javascript here
+          $(function() {
+            $(".nav a").on("click", function() {
+              $(".nav a").removeClass("active");
+              $(this).addClass("active");
+            });
+
+          })
+
+        </script>
+
+        <main class="col-sm-9 ml-sm-auto col-md-10 pt-3" role="main">
+          <h1>AI Signals to Predict Directional Stuff</h1>
+
+        <center>
+          <!--font color="#000000" face="verdana" size="2"> <h1></h1> </font>
+          <font color="#000000" face="verdana" size="2">... built on top of <a href="http://semantixs.sushain.com"
+            target="_blank">semantixs.sushain.com</a>
+          <br/-->
+          <!--br/>
+          by Sushain Pandit, <br/><br/>who resides <a href="http://sushain.com" target="_blank">here</a> ,
+          <a href="http://about.me/sushain" target="_blank">here</a> and/or
+          <a href="http://linkedin.com/in/sushainpandit" target="_blank">here</a>.</font>
+        </center-->
+        <br/>
+        <!--p>
+          <label for="strategy">Strategy:</label>
+          <select id="strategy">
+            <option value="continuous" selected="selected">Continuous (CPU intensive)</option>
+            <option value="discrete" >Discrete</option>
+            <option value="static">Static</option>
+          </select>
+        </p-->
+
+        <div id="visualization"></div>
+
+        <script type="text/javascript">
+        var DELAY = 1000;
+        var graph2d = null;
+        var strategy = 'discrete'; //document.getElementById('strategy');
+        var dataset = null;
+
+        function init() {
+          DELAY = 1000;
+          strategy = 'discrete';
+          var container = document.getElementById('visualization');
+          container.innerHTML="";
+          dataset = new vis.DataSet();
+
+          var options = {
+            start: vis.moment().add(-30, 'seconds'),
+            end: vis.moment(),
+            dataAxis: {
+              left: {
+                range: {
+                  min:-10, max: 10
+                }
+              }
+            },
+            drawPoints: {
+              style: 'circle'
+            },
+            shaded: {
+              orientation: 'bottom'
+            }
+          };
+         graph2d = new vis.Graph2d(container, dataset, options);
+        }
+
+        init();
+
+          function y(x) {
+            return (Math.sin(x / 2) + Math.cos(x / 4)) * 5 * Math.random();
+          }
+
+          function renderStep() {
+
+            var now = vis.moment();
+            var range = graph2d.getWindow();
+            var interval = range.end - range.start;
+            switch (strategy) {
+              case 'continuous':
+                // continuously move the window
+                graph2d.setWindow(now - interval, now, {animation: false});
+                requestAnimationFrame(renderStep);
+                break;
+
+              case 'discrete':
+                graph2d.setWindow(now - interval, now, {animation: false});
+                setTimeout(renderStep, DELAY);
+                break;
+
+              default: // 'static'
+                // move the window 90% to the left when now is larger than the end of the window
+                if (now > range.end) {
+                  graph2d.setWindow(now - 0.1 * interval, now + 0.9 * interval);
+                }
+                setTimeout(renderStep, DELAY);
+                break;
+            }
+          }
+          renderStep();
+
+          function addDataPoint() {
+            // add a new data point to the dataset
+            var now = vis.moment();
+            dataset.add({
+              x: now,
+              y: y(now / 1000)
+            });
+
+            // remove all data points which are no longer visible
+            var range = graph2d.getWindow();
+            var interval = range.end - range.start;
+            var oldIds = dataset.getIds({
+              filter: function (item) {
+                return item.x < range.start - interval;
+              }
+            });
+            dataset.remove(oldIds);
+
+            setTimeout(addDataPoint, DELAY);
+          }
+          addDataPoint();
+        </script>
+
+
+          <!--h2>Section title</h2>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Header</th>
+                  <th>Header</th>
+                  <th>Header</th>
+                  <th>Header</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1,001</td>
+                  <td>Lorem</td>
+                  <td>ipsum</td>
+                  <td>dolor</td>
+                  <td>sit</td>
+                </tr>
+                <tr>
+                  <td>1,002</td>
+                  <td>amet</td>
+                  <td>consectetur</td>
+                  <td>adipiscing</td>
+                  <td>elit</td>
+                </tr>
+                <tr>
+                  <td>1,003</td>
+                  <td>Integer</td>
+                  <td>nec</td>
+                  <td>odio</td>
+                  <td>Praesent</td>
+                </tr>
+                <tr>
+                  <td>1,003</td>
+                  <td>libero</td>
+                  <td>Sed</td>
+                  <td>cursus</td>
+                  <td>ante</td>
+                </tr>
+                <tr>
+                  <td>1,004</td>
+                  <td>dapibus</td>
+                  <td>diam</td>
+                  <td>Sed</td>
+                  <td>nisi</td>
+                </tr>
+                <tr>
+                  <td>1,005</td>
+                  <td>Nulla</td>
+                  <td>quis</td>
+                  <td>sem</td>
+                  <td>at</td>
+                </tr>
+                <tr>
+                  <td>1,006</td>
+                  <td>nibh</td>
+                  <td>elementum</td>
+                  <td>imperdiet</td>
+                  <td>Duis</td>
+                </tr>
+                <tr>
+                  <td>1,007</td>
+                  <td>sagittis</td>
+                  <td>ipsum</td>
+                  <td>Praesent</td>
+                  <td>mauris</td>
+                </tr>
+                <tr>
+                  <td>1,008</td>
+                  <td>Fusce</td>
+                  <td>nec</td>
+                  <td>tellus</td>
+                  <td>sed</td>
+                </tr>
+                <tr>
+                  <td>1,009</td>
+                  <td>augue</td>
+                  <td>semper</td>
+                  <td>porta</td>
+                  <td>Mauris</td>
+                </tr>
+                <tr>
+                  <td>1,010</td>
+                  <td>massa</td>
+                  <td>Vestibulum</td>
+                  <td>lacinia</td>
+                  <td>arcu</td>
+                </tr>
+                <tr>
+                  <td>1,011</td>
+                  <td>eget</td>
+                  <td>nulla</td>
+                  <td>Class</td>
+                  <td>aptent</td>
+                </tr>
+                <tr>
+                  <td>1,012</td>
+                  <td>taciti</td>
+                  <td>sociosqu</td>
+                  <td>ad</td>
+                  <td>litora</td>
+                </tr>
+                <tr>
+                  <td>1,013</td>
+                  <td>torquent</td>
+                  <td>per</td>
+                  <td>conubia</td>
+                  <td>nostra</td>
+                </tr>
+                <tr>
+                  <td>1,014</td>
+                  <td>per</td>
+                  <td>inceptos</td>
+                  <td>himenaeos</td>
+                  <td>Curabitur</td>
+                </tr>
+                <tr>
+                  <td>1,015</td>
+                  <td>sodales</td>
+                  <td>ligula</td>
+                  <td>in</td>
+                  <td>libero</td>
+                </tr>
+              </tbody>
+            </table>
+          </div-->
+        </main>
+      </div>
+    </div>
+
+    <br/>
+    <br/>
+    <br/>
+    <div class="container-fluid">
+      <div class="row">
+        <main class="col-sm-9 ml-sm-auto col-md-10 pt-3" role="main">
+
+    <center><p>Copyright (c) <a href="http://sushain.com" target="_blank">Sushain Pandit</a>.</p></center>
+  </main>
+</div>
+</div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="signaldata_files/jquery-3.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!--script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery.min.js"><\/script>')</script-->
+    <script src="signaldata_files/popper.js"></script>
+    <script src="signaldata_files/bootstrap.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="signaldata_files/ie10-viewport-bug-workaround.js"></script>
+
+
+</body></html>
