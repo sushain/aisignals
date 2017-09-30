@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html><head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta content="utf-8" http-equiv="encoding">
+  <meta name="description" content="Sushain Pandit is a technologist, inventor and author with contributions in data, analytics, artificial intelligence, counter fraud and related areas.">
+  <meta name="keywords" content="sushain,pandit,engineer,inventor,author,data,datascience,ibm,intrapreneurship">
+  <meta name="author" content="Sushain Pandit">
+  <title>Sushain Pandit - AI Signals</title>
+
+  <style type="text/css">
+    body, html, select {
+      font: 10pt sans-serif;
+    }
+  </style>
+
+  <script src="signaldata_files/vis.js"></script>
+  <link href="signaldata_files/vis-timeline-graph2d.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+  <br/>
+<center>
+  <font color="#000000" face="verdana" size="2"> <h1>Extracting Signals to Predict Directional Stuff</h1> </font>
+  <font color="#000000" face="verdana" size="2">... built on top of <a href="http://semantixs.sushain.com"
+    target="_blank">semantixs.sushain.com</a>
+  <br/>
+  <!--br/>
+  by Sushain Pandit, <br/><br/>who resides <a href="http://sushain.com" target="_blank">here</a> ,
+  <a href="http://about.me/sushain" target="_blank">here</a> and/or
+  <a href="http://linkedin.com/in/sushainpandit" target="_blank">here</a>.</font>
+</center-->
+<br/>
+<br/>
+<!--p>
+  <label for="strategy">Strategy:</label>
+  <select id="strategy">
+    <option value="continuous" selected="selected">Continuous (CPU intensive)</option>
+    <option value="discrete" >Discrete</option>
+    <option value="static">Static</option>
+  </select>
+</p-->
+
+<div id="visualization"><!--div class="vis-timeline vis-bottom" style="touch-action: pan-y; -moz-user-select: none; height: 445px;"><div class="vis-panel vis-background" style="height: 443px; width: 1408px; left: 0px; top: 0px;"></div><div class="vis-panel vis-background vis-vertical" style="height: 443px; width: 1369px; left: 41px; top: 0px;"><div class="vis-time-axis vis-background"><div style="top: -1px; height: 425px; left: -26.9933px; width: 54.0679px;" class="vis-grid vis-vertical vis-minor  vis-today  vis-odd"></div><div style="top: -1px; height: 446px; left: 27.0746px; width: 54.0679px;" class="vis-grid vis-vertical vis-major  vis-today  vis-even"></div><div style="top: -1px; height: 425px; left: 81.1426px; width: 54.0679px;" class="vis-grid vis-vertical vis-minor  vis-today  vis-odd"></div><div style="top: -1px; height: 425px; left: 135.211px; width: 54.0679px;" class="vis-grid vis-vertical vis-minor  vis-today  vis-even"></div><div style="top: -1px; height: 425px; left: 189.278px; width: 54.0679px;" class="vis-grid vis-vertical vis-minor  vis-today  vis-odd"></div><div style="top: -1px; height: 425px; left: 243.346px; width: 54.0679px;" class="vis-grid vis-vertical vis-minor  vis-today  vis-even"></div><div style="top: -1px; left: 297.414px; height: 425px; width: 54.0679px;" class="vis-grid vis-vertical vis-minor  vis-today  vis-odd"></div><div style="top: -1px; height: 425px; left: 351.482px; width: 54.0679px;" class="vis-grid vis-vertical vis-minor  vis-today  vis-even"></div><div style="top: -1px; height: 425px; left: 405.55px; width: 54.0679px;" class="vis-grid vis-vertical vis-minor  vis-today  vis-odd"></div><div style="top: -1px; height: 425px; left: 459.618px; width: 54.0679px;" class="vis-grid vis-vertical vis-minor  vis-today  vis-even"></div><div style="top: -1px; height: 425px; left: 513.686px; width: 54.0679px;" class="vis-grid vis-vertical vis-minor  vis-today  vis-odd"></div><div style="top: -1px; left: 567.754px; height: 446px; width: 54.0679px;" class="vis-grid vis-vertical vis-major  vis-today  vis-even"></div><div style="top: -1px; height: 425px; left: 621.822px; width: 54.0679px;" class="vis-grid vis-vertical vis-minor  vis-today  vis-odd"></div><div style="top: -1px; height: 425px; left: 675.89px; width: 54.0679px;" class="vis-grid vis-vertical vis-minor  vis-today  vis-even"></div><div style="top: -1px; height: 425px; left: 729.958px; width: 54.0679px;" class="vis-grid vis-vertical vis-minor  vis-today  vis-odd"></div><div style="top: -1px; height: 425px; left: 784.026px; width: 54.0679px;" class="vis-grid vis-vertical vis-minor  vis-today  vis-even"></div><div style="top: -1px; height: 425px; left: 838.094px; width: 54.0679px;" class="vis-grid vis-vertical vis-minor  vis-today  vis-odd"></div><div style="top: -1px; height: 425px; left: 892.162px; width: 54.0679px;" class="vis-grid vis-vertical vis-minor  vis-today  vis-even"></div><div style="top: -1px; height: 425px; left: 946.229px; width: 54.0679px;" class="vis-grid vis-vertical vis-minor  vis-today  vis-odd"></div><div style="top: -1px; height: 425px; left: 1000.3px; width: 54.0679px;" class="vis-grid vis-vertical vis-minor  vis-today  vis-even"></div><div style="top: -1px; height: 425px; left: 1054.37px; width: 54.0679px;" class="vis-grid vis-vertical vis-minor  vis-today  vis-odd"></div><div style="top: -1px; height: 446px; left: 1108.43px; width: 54.0679px;" class="vis-grid vis-vertical vis-major  vis-today  vis-even"></div><div style="top: -1px; left: 1162.5px; height: 425px; width: 54.0679px;" class="vis-grid vis-vertical vis-minor  vis-today  vis-odd"></div><div style="top: -1px; height: 425px; left: 1216.57px; width: 54.0679px;" class="vis-grid vis-vertical vis-minor  vis-today  vis-even"></div><div style="top: -1px; height: 425px; left: 1270.64px; width: 54.0679px;" class="vis-grid vis-vertical vis-minor  vis-today  vis-odd"></div><div style="top: -1px; height: 425px; left: 1324.7px; width: 54.0679px;" class="vis-grid vis-vertical vis-minor  vis-today  vis-even"></div></div><div class="vis-current-time" style="position: absolute; top: 0px; height: 100%; left: 1379.81px;" title="Current time: Tuesday, September 26th 2017, 23:40:17"></div></div><div class="vis-panel vis-background vis-horizontal" style="height: 402px; width: 1408px; left: 0px; top: -1px;"><div style="width: 100%; height: 400px; position: relative; top: 0px;"><div class="vis-grid vis-horizontal vis-minor" style="left: 36px; width: 1376px; top: 380px;"></div><div class="vis-grid vis-horizontal vis-minor" style="left: 36px; width: 1376px; top: 360px;"></div><div class="vis-grid vis-horizontal vis-minor" style="left: 36px; width: 1376px; top: 340px;"></div><div class="vis-grid vis-horizontal vis-minor" style="left: 36px; width: 1376px; top: 320px;"></div><div class="vis-grid vis-horizontal vis-major" style="left: 33px; width: 1382px; top: 300px;"></div><div class="vis-grid vis-horizontal vis-minor" style="left: 36px; width: 1376px; top: 280px;"></div><div class="vis-grid vis-horizontal vis-minor" style="left: 36px; width: 1376px; top: 260px;"></div><div class="vis-grid vis-horizontal vis-minor" style="left: 36px; width: 1376px; top: 240px;"></div><div class="vis-grid vis-horizontal vis-minor" style="left: 36px; width: 1376px; top: 220px;"></div><div class="vis-grid vis-horizontal vis-major" style="left: 33px; width: 1382px; top: 200px;"></div><div class="vis-grid vis-horizontal vis-minor" style="left: 36px; width: 1376px; top: 180px;"></div><div class="vis-grid vis-horizontal vis-minor" style="left: 36px; width: 1376px; top: 160px;"></div><div class="vis-grid vis-horizontal vis-minor" style="left: 36px; width: 1376px; top: 140px;"></div><div class="vis-grid vis-horizontal vis-minor" style="left: 36px; width: 1376px; top: 120px;"></div><div class="vis-grid vis-horizontal vis-major" style="left: 33px; width: 1382px; top: 100px;"></div><div class="vis-grid vis-horizontal vis-minor" style="left: 36px; width: 1376px; top: 80px;"></div><div class="vis-grid vis-horizontal vis-minor" style="left: 36px; width: 1376px; top: 60px;"></div><div class="vis-grid vis-horizontal vis-minor" style="left: 36px; width: 1376px; top: 40px;"></div><div class="vis-grid vis-horizontal vis-minor" style="left: 36px; width: 1376px; top: 20px;"></div></div></div><div class="vis-panel vis-center" style="height: 402px; width: 1369px; left: 40px; top: -1px;"><div class="vis-content" style="left: 0px; top: 0px;"><div class="vis-line-graph"><svg style="position: relative; height: 400px; display: block; width: 4101px; left: -1926.87px;"><path class="vis-graph-group0 vis-fill" d="M512,166 C511.64533965244857,166 880.9942337184408,162.4908503805963 1065.3009478672984,165 1249.1957457586723,167.50354179591523 1432.2706094158564,174.18727053844003 1616.253159557662,181 1801.0110926527982,187.84144128388263 1986.608576970087,198.15960496605126 2171.5308056872036,206 2356.07206760467,213.8242426750636 2539.4836378114064,222.8365354534412 2724.6457345971567,228 2911.2781696051793,233.2044666707189 3286.9522116903636,237 3286.9522116903636,237  V400 H512 Z"></path><path class="vis-graph-group0" d="M512,166 C511.64533965244857,166 880.9942337184408,162.4908503805963 1065.3009478672984,165 1249.1957457586723,167.50354179591523 1432.2706094158564,174.18727053844003 1616.253159557662,181 1801.0110926527982,187.84144128388263 1986.608576970087,198.15960496605126 2171.5308056872036,206 2356.07206760467,213.8242426750636 2539.4836378114064,222.8365354534412 2724.6457345971567,228 2911.2781696051793,233.2044666707189 3286.9522116903636,237 3286.9522116903636,237 "></path><circle cx="511.64533965244857" cy="166" r="3" class="vis-graph-group0 vis-point"></circle><circle cx="1065.3009478672984" cy="165" r="3" class="vis-graph-group0 vis-point"></circle><circle cx="1616.253159557662" cy="181" r="3" class="vis-graph-group0 vis-point"></circle><circle cx="2171.5308056872036" cy="206" r="3" class="vis-graph-group0 vis-point"></circle><circle cx="2724.6457345971567" cy="228" r="3" class="vis-graph-group0 vis-point"></circle><circle cx="3286.9522116903636" cy="237" r="3" class="vis-graph-group0 vis-point"></circle></svg></div></div><div class="vis-shadow vis-top" style="visibility: hidden;"></div><div class="vis-shadow vis-bottom" style="visibility: hidden;"></div></div><div class="vis-panel vis-left" style="height: 402px; left: 0px; top: -1px;"><div class="vis-content" style="left: 0px; top: 0px;"><div style="width: 40px; height: 400px; top: 0px; left: 0px;" class="vis-data-axis"><svg style="position: absolute; top: 0px; height: 100%; width: 100%; display: block;"></svg><div class="vis-y-axis vis-minor" style="left: -10px; text-align: right; top: 372.5px;">-9</div><div class="vis-y-axis vis-minor" style="left: -10px; text-align: right; top: 352.5px;">-8</div><div class="vis-y-axis vis-minor" style="left: -10px; text-align: right; top: 332.5px;">-7</div><div class="vis-y-axis vis-minor" style="left: -10px; text-align: right; top: 312.5px;">-6</div><div class="vis-y-axis vis-major" style="left: -10px; text-align: right; top: 292.5px;">-5</div><div class="vis-y-axis vis-minor" style="left: -10px; text-align: right; top: 272.5px;">-4</div><div class="vis-y-axis vis-minor" style="left: -10px; text-align: right; top: 252.5px;">-3</div><div class="vis-y-axis vis-minor" style="left: -10px; text-align: right; top: 232.5px;">-2</div><div class="vis-y-axis vis-minor" style="left: -10px; text-align: right; top: 212.5px;">-1</div><div class="vis-y-axis vis-major" style="left: -10px; text-align: right; top: 192.5px;">0</div><div class="vis-y-axis vis-minor" style="left: -10px; text-align: right; top: 172.5px;">1</div><div class="vis-y-axis vis-minor" style="left: -10px; text-align: right; top: 152.5px;">2</div><div class="vis-y-axis vis-minor" style="left: -10px; text-align: right; top: 132.5px;">3</div><div class="vis-y-axis vis-minor" style="left: -10px; text-align: right; top: 112.5px;">4</div><div class="vis-y-axis vis-major" style="left: -10px; text-align: right; top: 92.5px;">5</div><div class="vis-y-axis vis-minor" style="left: -10px; text-align: right; top: 72.5px;">6</div><div class="vis-y-axis vis-minor" style="left: -10px; text-align: right; top: 52.5px;">7</div><div class="vis-y-axis vis-minor" style="left: -10px; text-align: right; top: 32.5px;">8</div><div class="vis-y-axis vis-minor" style="left: -10px; text-align: right; top: 12.5px;">9</div></div></div><div class="vis-shadow vis-top" style="visibility: hidden;"></div><div class="vis-shadow vis-bottom" style="visibility: hidden;"></div></div><div class="vis-panel vis-right" style="height: 402px; left: 1409px; top: -1px;"><div class="vis-content" style="left: 0px; top: 0px;"></div><div class="vis-shadow vis-top" style="visibility: hidden;"></div><div class="vis-shadow vis-bottom" style="visibility: hidden;"></div></div><div class="vis-panel vis-top" style="width: 1369px; left: 40px; top: 0px;"></div><div class="vis-panel vis-bottom" style="width: 1369px; left: 40px; top: 401px;"><div class="vis-time-axis vis-foreground" style="height: 42px;"><div class="vis-text vis-minor vis-measure" style="position: absolute;">0</div><div class="vis-text vis-major vis-measure" style="position: absolute;">0</div><div style="top: 0px; left: -26.4933px; width: 54.0679px;" class="vis-text vis-minor  vis-today  vis-odd">900</div><div style="top: 0px; left: 27.5746px; width: 54.0679px;" class="vis-text vis-minor  vis-today  vis-even">000</div><div style="top: 0px; left: 81.6426px; width: 54.0679px;" class="vis-text vis-minor  vis-today  vis-odd">100</div><div style="top: 0px; left: 135.711px; width: 54.0679px;" class="vis-text vis-minor  vis-today  vis-even">200</div><div style="top: 0px; left: 189.778px; width: 54.0679px;" class="vis-text vis-minor  vis-today  vis-odd">300</div><div style="top: 0px; left: 243.846px; width: 54.0679px;" class="vis-text vis-minor  vis-today  vis-even">400</div><div class="vis-text vis-major  vis-today  vis-even" style="top: 21px; left: 27.5746px;"><div>23:40:15</div></div><div style="top: 0px; left: 297.914px; width: 54.0679px;" class="vis-text vis-minor  vis-today  vis-odd">500</div><div class="vis-text vis-major  vis-today  vis-even" style="top: 21px; left: 568.254px;"><div>23:40:16</div></div><div style="top: 0px; left: 351.982px; width: 54.0679px;" class="vis-text vis-minor  vis-today  vis-even">600</div><div style="top: 0px; left: 406.05px; width: 54.0679px;" class="vis-text vis-minor  vis-today  vis-odd">700</div><div style="top: 0px; left: 460.118px; width: 54.0679px;" class="vis-text vis-minor  vis-today  vis-even">800</div><div style="top: 0px; left: 514.186px; width: 54.0679px;" class="vis-text vis-minor  vis-today  vis-odd">900</div><div style="top: 0px; left: 568.254px; width: 54.0679px;" class="vis-text vis-minor  vis-today  vis-even">000</div><div class="vis-text vis-major  vis-today  vis-even" style="top: 21px; left: 1108.93px;"><div>23:40:17</div></div><div style="top: 0px; left: 622.322px; width: 54.0679px;" class="vis-text vis-minor  vis-today  vis-odd">100</div><div style="top: 0px; left: 676.39px; width: 54.0679px;" class="vis-text vis-minor  vis-today  vis-even">200</div><div style="top: 0px; left: 730.458px; width: 54.0679px;" class="vis-text vis-minor  vis-today  vis-odd">300</div><div style="top: 0px; left: 784.526px; width: 54.0679px;" class="vis-text vis-minor  vis-today  vis-even">400</div><div style="top: 0px; left: 838.594px; width: 54.0679px;" class="vis-text vis-minor  vis-today  vis-odd">500</div><div style="top: 0px; left: 892.662px; width: 54.0679px;" class="vis-text vis-minor  vis-today  vis-even">600</div><div style="top: 0px; left: 946.729px; width: 54.0679px;" class="vis-text vis-minor  vis-today  vis-odd">700</div><div style="top: 0px; left: 1000.8px; width: 54.0679px;" class="vis-text vis-minor  vis-today  vis-even">800</div><div style="top: 0px; left: 1054.87px; width: 54.0679px;" class="vis-text vis-minor  vis-today  vis-odd">900</div><div style="top: 0px; left: 1108.93px; width: 54.0679px;" class="vis-text vis-minor  vis-today  vis-even">000</div><div style="top: 0px; left: 1163px; width: 54.0679px;" class="vis-text vis-minor  vis-today  vis-odd">100</div><div style="top: 0px; left: 1217.07px; width: 54.0679px;" class="vis-text vis-minor  vis-today  vis-even">200</div><div style="top: 0px; left: 1271.14px; width: 54.0679px;" class="vis-text vis-minor  vis-today  vis-odd">300</div><div style="top: 0px; left: 1325.2px; width: 54.0679px;" class="vis-text vis-minor  vis-today  vis-even">400</div></div></div><div class="vis-rolling-mode-btn" style="visibility: hidden;"></div></div></div-->
+
+<script type="text/javascript">
+  var DELAY = 1000; // delay in ms to add new data points
+
+  var strategy = 'discrete'; //document.getElementById('strategy');
+
+  // create a graph2d with an (currently empty) dataset
+  var container = document.getElementById('visualization');
+  var dataset = new vis.DataSet();
+
+  var options = {
+    start: vis.moment().add(-30, 'seconds'), // changed so its faster
+    end: vis.moment(),
+    dataAxis: {
+      left: {
+        range: {
+          min:-10, max: 10
+        }
+      }
+    },
+    drawPoints: {
+      style: 'circle' // square, circle
+    },
+    shaded: {
+      orientation: 'bottom' // top, bottom
+    }
+  };
+  var graph2d = new vis.Graph2d(container, dataset, options);
+
+  // a function to generate data points
+  function y(x) {
+    return (Math.sin(x / 2) + Math.cos(x / 4)) * 5 * Math.random();
+  }
+
+  function renderStep() {
+    // move the window (you can think of different strategies).
+    var now = vis.moment();
+    var range = graph2d.getWindow();
+    var interval = range.end - range.start;
+    switch (strategy) {
+      case 'continuous':
+        // continuously move the window
+        graph2d.setWindow(now - interval, now, {animation: false});
+        requestAnimationFrame(renderStep);
+        break;
+
+      case 'discrete':
+        graph2d.setWindow(now - interval, now, {animation: false});
+        setTimeout(renderStep, DELAY);
+        break;
+
+      default: // 'static'
+        // move the window 90% to the left when now is larger than the end of the window
+        if (now > range.end) {
+          graph2d.setWindow(now - 0.1 * interval, now + 0.9 * interval);
+        }
+        setTimeout(renderStep, DELAY);
+        break;
+    }
+  }
+  renderStep();
+
+  /**
+   * Add a new datapoint to the graph
+   */
+  function addDataPoint() {
+    // add a new data point to the dataset
+    var now = vis.moment();
+    dataset.add({
+      x: now,
+      y: y(now / 1000)
+    });
+
+    // remove all data points which are no longer visible
+    var range = graph2d.getWindow();
+    var interval = range.end - range.start;
+    var oldIds = dataset.getIds({
+      filter: function (item) {
+        return item.x < range.start - interval;
+      }
+    });
+    dataset.remove(oldIds);
+
+    setTimeout(addDataPoint, DELAY);
+  }
+  addDataPoint();
+</script>
+<br/>
+<br/>
+<br/>
+<center><p>Copyright (c) <a href="http://sushain.com" target="_blank">Sushain Pandit</a>.</p></center>
+
+</body></html>
